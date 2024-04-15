@@ -1,10 +1,10 @@
-import "reflect-metadata";
-import { buildSchema } from "type-graphql";
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
-import dataSource from "../config/db";
-import { CountryResolver } from "./resolvers/Country";
-import { Country } from "./entities/country";
+import 'reflect-metadata';
+import { buildSchema } from 'type-graphql';
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
+import dataSource from '../config/db';
+import { CountryResolver } from './resolvers/Country';
+import { Country } from './entities/country';
 
 const start = async () => {
     await dataSource.initialize();
@@ -14,30 +14,30 @@ const start = async () => {
     if (countries.length < 4) {
         const france = new Country();
         france.code = 'FR';
-        france.name = "France";
-        france.emoji = "🇫🇷";
-        france.continent = "Europe";
+        france.name = 'France';
+        france.emoji = '🇫🇷';
+        france.continent = 'Europe';
         france.save();
 
         const belgium = new Country();
         belgium.code = 'BE';
-        belgium.name = "Belgium";
-        belgium.emoji = "🇧🇪";
-        belgium.continent = "Europe";
+        belgium.name = 'Belgium';
+        belgium.emoji = '🇧🇪';
+        belgium.continent = 'Europe';
         belgium.save();
 
         const andorra = new Country();
         andorra.code = 'AD';
-        andorra.name = "Andorra";
-        andorra.emoji = "🇦🇩";
-        andorra.continent = "Europe";
+        andorra.name = 'Andorra';
+        andorra.emoji = '🇦🇩';
+        andorra.continent = 'Europe';
         andorra.save();
 
         const vietnam = new Country();
         vietnam.code = 'VN';
-        vietnam.name = "Vietnam";
-        vietnam.emoji = "🇻🇳";
-        vietnam.continent = "Asia";
+        vietnam.name = 'Vietnam';
+        vietnam.emoji = '🇻🇳';
+        vietnam.continent = 'Asia';
         vietnam.save();
     }
 
